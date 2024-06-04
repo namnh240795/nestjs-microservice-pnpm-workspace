@@ -27,6 +27,42 @@
       "compilerOptions": {
         "tsConfigPath": "apps/backend/tsconfig.app.json"
       }
+    },
+    "caching": {
+      "type": "application",
+      "root": "apps/caching",
+      "entryFile": "main",
+      "sourceRoot": "apps/caching/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/caching/tsconfig.app.json"
+      }
+    },
+    "queueing": {
+      "type": "application",
+      "root": "apps/queueing",
+      "entryFile": "main",
+      "sourceRoot": "apps/queueing/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/queueing/tsconfig.app.json"
+      }
+    },
+    "mailing": {
+      "type": "application",
+      "root": "apps/mailing",
+      "entryFile": "main",
+      "sourceRoot": "apps/mailing/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mailing/tsconfig.app.json"
+      }
+    },
+    "sms": {
+      "type": "application",
+      "root": "apps/sms",
+      "entryFile": "main",
+      "sourceRoot": "apps/sms/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sms/tsconfig.app.json"
+      }
     }
   }
 }
