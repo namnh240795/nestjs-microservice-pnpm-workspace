@@ -63,6 +63,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/sms/tsconfig.app.json"
       }
+    },
+    "sendmail": {
+      "type": "library",
+      "root": "libs/sendmail",
+      "entryFile": "index",
+      "sourceRoot": "libs/sendmail/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/sendmail/tsconfig.lib.json"
+      }
     }
   }
 }

@@ -69,7 +69,11 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/apps/"
-    ]
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^namnh240795/sendmail(|/.*)$": "<rootDir>/libs/sendmail/src/$1"
+    }
   }
 }
