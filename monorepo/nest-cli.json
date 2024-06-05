@@ -34,13 +34,13 @@
         ]
       }
     },
-    "caching": {
+    "cache": {
       "type": "application",
-      "root": "apps/caching",
+      "root": "apps/cache",
       "entryFile": "main",
-      "sourceRoot": "apps/caching/src",
+      "sourceRoot": "apps/cache/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/caching/tsconfig.app.json"
+        "tsConfigPath": "apps/cache/tsconfig.app.json"
       }
     },
     "queueing": {
