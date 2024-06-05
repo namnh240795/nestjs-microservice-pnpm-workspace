@@ -72,6 +72,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/sendmail/tsconfig.lib.json"
       }
+    },
+    "password-hashing": {
+      "type": "library",
+      "root": "libs/password-hashing",
+      "entryFile": "index",
+      "sourceRoot": "libs/password-hashing/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/password-hashing/tsconfig.lib.json"
+      }
     }
   }
 }

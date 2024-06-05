@@ -18,11 +18,17 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "namnh240795/sendmail": [
+      "@namnh240795/sendmail": [
         "libs/sendmail/src"
       ],
-      "namnh240795/sendmail/*": [
+      "@namnh240795/sendmail/*": [
         "libs/sendmail/src/*"
+      ],
+      "@namnh240795/password-hashing": [
+        "libs/password-hashing/src"
+      ],
+      "@namnh240795/password-hashing/*": [
+        "libs/password-hashing/src/*"
       ]
     }
   }
