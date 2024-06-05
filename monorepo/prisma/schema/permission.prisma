@@ -1,0 +1,28 @@
+model Role {
+  id             Int              @id @default(autoincrement())
+  name           String
+  RolePermission RolePermission[]
+  UserRole       UserRole[]
+}
+
+model Permission {
+  id             Int              @id @default(autoincrement())
+  name           String
+  RolePermission RolePermission[]
+}
+
+model RolePermission {
+  id           Int        @id @default(autoincrement())
+  roleId       Int
+  permissionId Int
+  role         Role       @relation(fields: [roleId], references: [id])
+  permission   Permission @relation(fields: [permissionId], references: [id])
+}
+
+model UserRole {
+  id     Int  @id @default(autoincrement())
+  userId Int
+  roleId Int
+  user   User @relation(fields: [userId], references: [id])
+  role   Role @relation(fields: [roleId], references: [id])
+}
