@@ -76,7 +76,8 @@
     ],
     "moduleNameMapper": {
       "^namnh240795/sendmail(|/.*)$": "<rootDir>/libs/sendmail/src/$1",
-      "^@namnh240795/password-hashing(|/.*)$": "<rootDir>/libs/password-hashing/src/$1"
+      "^@namnh240795/password-hashing(|/.*)$": "<rootDir>/libs/password-hashing/src/$1",
+      "^@namnh240795/decorators/authorization(|/.*)$": "<rootDir>/libs/decorators/authorization/src/$1"
     }
   }
 }

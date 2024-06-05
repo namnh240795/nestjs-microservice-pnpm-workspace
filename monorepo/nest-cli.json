@@ -81,6 +81,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/password-hashing/tsconfig.lib.json"
       }
+    },
+    "decorators/authorization": {
+      "type": "library",
+      "root": "libs/decorators/authorization",
+      "entryFile": "index",
+      "sourceRoot": "libs/decorators/authorization/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/decorators/authorization/tsconfig.lib.json"
+      }
     }
   }
 }
