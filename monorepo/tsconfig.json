@@ -35,6 +35,12 @@
       ],
       "@namnh240795/decorators/authorization/*": [
         "libs/decorators/authorization/src/*"
+      ],
+      "@namnh240795/prisma": [
+        "libs/prisma/src"
+      ],
+      "@namnh240795/prisma/*": [
+        "libs/prisma/src/*"
       ]
     }
   }
