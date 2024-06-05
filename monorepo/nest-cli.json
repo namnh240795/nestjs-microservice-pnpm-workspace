@@ -25,7 +25,13 @@
       "entryFile": "main",
       "sourceRoot": "apps/backend/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/backend/tsconfig.app.json"
+        "tsConfigPath": "apps/backend/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "apps/backend/**/*.json",
+            "watchAssets": true
+          }
+        ]
       }
     },
     "caching": {
@@ -98,6 +104,33 @@
       "sourceRoot": "libs/prisma/src",
       "compilerOptions": {
         "tsConfigPath": "libs/prisma/tsconfig.lib.json"
+      }
+    },
+    "dbclient": {
+      "type": "library",
+      "root": "libs/dbclient",
+      "entryFile": "index",
+      "sourceRoot": "libs/dbclient/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/dbclient/tsconfig.lib.json"
+      }
+    },
+    "api-json": {
+      "type": "library",
+      "root": "libs/api-json",
+      "entryFile": "index",
+      "sourceRoot": "libs/api-json/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/api-json/tsconfig.lib.json"
+      }
+    },
+    "healthcheck": {
+      "type": "library",
+      "root": "libs/healthcheck",
+      "entryFile": "index",
+      "sourceRoot": "libs/healthcheck/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/healthcheck/tsconfig.lib.json"
       }
     }
   }

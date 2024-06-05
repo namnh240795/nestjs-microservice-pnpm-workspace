@@ -41,6 +41,12 @@
       ],
       "@namnh240795/prisma/*": [
         "libs/prisma/src/*"
+      ],
+      "@namnh240795/healthcheck": [
+        "libs/healthcheck/src"
+      ],
+      "@namnh240795/healthcheck/*": [
+        "libs/healthcheck/src/*"
       ]
     }
   }

@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { BackendController } from './backend.controller';
-import { BackendService } from './backend.service';
+import { RegistrationModule } from './registration/registration.module';
+import { HealthcheckModule } from '@namnh240795/healthcheck';
 
 @Module({
-  imports: [],
-  controllers: [BackendController],
-  providers: [BackendService],
+  imports: [HealthcheckModule, RegistrationModule],
+  controllers: [],
+  providers: [],
 })
 export class BackendModule {}
