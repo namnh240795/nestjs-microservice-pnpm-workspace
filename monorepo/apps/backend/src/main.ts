@@ -1,9 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { BackendModule } from './backend.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(BackendModule);
+
+  app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
     .setTitle('Backend API')

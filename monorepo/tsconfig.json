@@ -47,6 +47,12 @@
       ],
       "@namnh240795/healthcheck/*": [
         "libs/healthcheck/src/*"
+      ],
+      "@namnh240795/events": [
+        "libs/events/src"
+      ],
+      "@namnh240795/events/*": [
+        "libs/events/src/*"
       ]
     }
   }

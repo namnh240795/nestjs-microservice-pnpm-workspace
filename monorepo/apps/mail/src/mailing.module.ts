@@ -3,12 +3,14 @@ import { MailingController } from './mailing.controller';
 import { MailingService } from './mailing.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { BullModule } from '@nestjs/bull';
+import { SERVICE } from '@namnh240795/events/service';
+import { QUEUE } from '@namnh240795/events/queue';
 
 @Module({
   imports: [
     ClientsModule.register([
       {
-        name: 'SMS_SERVICE',
+        name: SERVICE.MAIL,
         transport: Transport.REDIS,
         options: {
           host: 'localhost',
@@ -23,7 +25,7 @@ import { BullModule } from '@nestjs/bull';
       },
     }),
     BullModule.registerQueue({
-      name: 'mail_queue',
+      name: QUEUE.MAIL,
     }),
   ],
   controllers: [MailingController],

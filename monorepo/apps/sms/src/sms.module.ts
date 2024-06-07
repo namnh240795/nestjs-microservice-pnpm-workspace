@@ -1,14 +1,18 @@
-import { Module } from '@nestjs/common';
 import { SmsController } from './sms.controller';
 import { SmsService } from './sms.service';
-import { ClientsModule, Transport } from '@nestjs/microservices';
 import { BullModule } from '@nestjs/bull';
+import { QUEUE, SERVICE } from '@namnh240795/events';
+import { SmsConsumer } from './sms.consumer';
+import { ClientsModule, Transport } from '@nestjs/microservices';
+import { Module } from '@nestjs/common';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
   imports: [
+    HttpModule,
     ClientsModule.register([
       {
-        name: 'SMS_SERVICE',
+        name: SERVICE.SMS,
         transport: Transport.REDIS,
         options: {
           host: 'localhost',
@@ -23,10 +27,10 @@ import { BullModule } from '@nestjs/bull';
       },
     }),
     BullModule.registerQueue({
-      name: 'sms_queue',
+      name: QUEUE.SMS,
     }),
   ],
   controllers: [SmsController],
-  providers: [SmsService],
+  providers: [SmsService, SmsConsumer],
 })
 export class SmsModule {}
