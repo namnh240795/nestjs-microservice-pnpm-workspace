@@ -1,5 +1,13 @@
 import { QUEUE, SERVICE, SMS_COMMAND } from '@namnh240795/events';
-import { Process, Processor } from '@nestjs/bull';
+import {
+  OnQueueActive,
+  OnQueueError,
+  OnQueueFailed,
+  OnQueueStalled,
+  OnQueueWaiting,
+  Process,
+  Processor,
+} from '@nestjs/bull';
 import { Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 
@@ -16,5 +24,20 @@ export class SmsConsumer {
     await this.client
       .send({ cmd: SMS_COMMAND.TRIGGER_SEND }, { data: job.data })
       .subscribe(() => {});
+  }
+
+  @OnQueueActive()
+  onActive(job: any) {
+    console.log('Processing job...', job.data);
+  }
+
+  @OnQueueFailed()
+  onError(error: Error) {
+    console.log('error', error);
+  }
+
+  @OnQueueWaiting()
+  onWaiting(jobId: number) {
+    console.log('Job waiting', jobId);
   }
 }
