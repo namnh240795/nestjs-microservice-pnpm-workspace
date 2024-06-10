@@ -141,6 +141,24 @@
       "compilerOptions": {
         "tsConfigPath": "libs/events/tsconfig.lib.json"
       }
+    },
+    "google-auth": {
+      "type": "library",
+      "root": "libs/google-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/google-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/google-auth/tsconfig.lib.json"
+      }
+    },
+    "environment": {
+      "type": "library",
+      "root": "libs/environment",
+      "entryFile": "index",
+      "sourceRoot": "libs/environment/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/environment/tsconfig.lib.json"
+      }
     }
   }
 }

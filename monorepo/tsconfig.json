@@ -53,6 +53,18 @@
       ],
       "@namnh240795/events/*": [
         "libs/events/src/*"
+      ],
+      "@namnh240795/google-auth": [
+        "libs/google-auth/src"
+      ],
+      "@namnh240795/google-auth/*": [
+        "libs/google-auth/src/*"
+      ],
+      "@namnh240795/environment": [
+        "libs/environment/src"
+      ],
+      "@namnh240795/environment/*": [
+        "libs/environment/src/*"
       ]
     }
   }
