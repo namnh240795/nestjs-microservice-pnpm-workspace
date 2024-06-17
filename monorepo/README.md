@@ -71,3 +71,13 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## dockers build sample
+
+```bash
+cd monorepo
+docker build -t base:latest --file dockers/base.dockerfile .
+docker build -t sms:latest --file dockers/sms.dockerfile .
+docker build -t backend:latest --file dockers/backend.dockerfile .
+```
