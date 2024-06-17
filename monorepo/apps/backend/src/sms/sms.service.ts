@@ -7,9 +7,10 @@ export class SmsService {
   constructor(@Inject(SERVICE.SMS) private client: ClientProxy) {}
 
   sendSMS() {
-    console.log('service send');
-    this.client
-      .send({ cmd: SMS_COMMAND.SEND }, { data: 'Hello' })
-      .subscribe(() => {});
+    try {
+      this.client.send({ cmd: SMS_COMMAND.SEND }, { data: 'Hello' });
+    } catch (error) {
+      console.log('error', error);
+    }
   }
 }
