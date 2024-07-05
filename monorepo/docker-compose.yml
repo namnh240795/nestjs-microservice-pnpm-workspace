@@ -17,9 +17,21 @@ services:
       - 6666:6379
     volumes:
       - redisdata:/data
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 7777:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - monorepodata:/data/db
     
 volumes:
   monorepodata:
     driver: local
   redisdata:
+    driver: local
+  mongodbdata:
     driver: local
