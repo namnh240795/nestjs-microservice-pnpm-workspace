@@ -15,13 +15,27 @@ export class SignInService {
     console.log(data);
   }
 
-  mongo() {
-    return this.mongoPrismaService.locale.create({
+  async mongo() {
+    const a = await this.mongoPrismaService.locale.create({
       data: {
-        name: 'Vietnamese (Vietnam)',
-        abbreviation: 'vi-VN',
-        dominant: 'vi-VN',
+        name: 'English (United States)',
+        abbreviation: 'en-US',
+        dominant: 'en-US',
       },
+    });
+    const key = await this.mongoPrismaService.translationKey.create({
+      data: {
+        key: 'hello',
+      },
+    });
+    await this.mongoPrismaService.translationLocale.createMany({
+      data: [
+        {
+          translationKeyId: key.id,
+          localeId: a.id,
+          value: 'Hello',
+        },
+      ],
     });
   }
 }

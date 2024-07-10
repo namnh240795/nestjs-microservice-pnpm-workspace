@@ -16,20 +16,27 @@ datasource db {
 }
 
 model Locale {
-  id           String @id @default(auto()) @map("_id") @db.ObjectId
-  name         String @unique
-  abbreviation String
-  dominant     String
+  id                String              @id @default(auto()) @map("_id") @db.ObjectId
+  name              String              @unique
+  abbreviation      String
+  dominant          String
+  TranslationLocale TranslationLocale[]
 }
 
 model TranslationLocale {
   id               String         @id @default(auto()) @map("_id") @db.ObjectId
   translationKey   TranslationKey @relation(fields: [translationKeyId], references: [id])
   translationKeyId String         @db.ObjectId
+  locale           Locale         @relation(fields: [localeId], references: [id])
+  localeId         String         @db.ObjectId
+  value            String
+
+  @@index([translationKeyId], name: "translationKeyId")
+  @@index([localeId], name: "localeId")
 }
 
 model TranslationKey {
   id                String              @id @default(auto()) @map("_id") @db.ObjectId
-  key               String @unique
+  key               String              @unique
   TranslationLocale TranslationLocale[]
 }
