@@ -168,6 +168,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/frontend/tsconfig.app.json"
       }
+    },
+    "mongo-prisma": {
+      "type": "library",
+      "root": "libs/mongo-prisma",
+      "entryFile": "index",
+      "sourceRoot": "libs/mongo-prisma/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/mongo-prisma/tsconfig.lib.json"
+      }
     }
   }
 }

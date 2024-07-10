@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { SignInService } from './sign-in.service';
 import { GoogleSignInDto } from './dto/google-sign-in.dto';
 import { ApiTags } from '@nestjs/swagger';
@@ -11,5 +11,10 @@ export class SignInController {
   @Post('/google')
   async googleSignIn(@Body() dto: GoogleSignInDto) {
     return this.signInService.googleSignIn(dto);
+  }
+
+  @Get('/mongo')
+  async createNewObjectMongo() {
+    return this.signInService.mongo();
   }
 }

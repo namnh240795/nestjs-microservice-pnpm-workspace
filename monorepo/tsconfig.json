@@ -37,10 +37,10 @@
         "libs/decorators/authorization/src/*"
       ],
       "@namnh240795/prisma": [
-        "libs/prisma/src"
+        "libs/pgsql-prisma/src"
       ],
       "@namnh240795/prisma/*": [
-        "libs/prisma/src/*"
+        "libs/pgsql-prisma/src/*"
       ],
       "@namnh240795/healthcheck": [
         "libs/healthcheck/src"
@@ -65,6 +65,12 @@
       ],
       "@namnh240795/environment/*": [
         "libs/environment/src/*"
+      ],
+      "@namnh240795/mongo-prisma": [
+        "libs/mongo-prisma/src"
+      ],
+      "@namnh240795/mongo-prisma/*": [
+        "libs/mongo-prisma/src/*"
       ]
     }
   }

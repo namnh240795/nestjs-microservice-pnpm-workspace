@@ -17,16 +17,28 @@ services:
       - 6666:6379
     volumes:
       - redisdata:/data
-  mongo:
-    image: mongo
-    restart: always
-    ports:
-      - 7777:27017
+
+  mongo_replica:  
+    build:
+      context: .  
+      dockerfile: mongodb_replica.dockerfile
+      args:
+        MONGO_VERSION: 7
     environment:
+      MONGO_REPLICA_HOST: 127.0.0.1
+      MONGO_REPLICA_PORT: 27019
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: translations
+      # Use "mongo" instead of "mongosh" before v5.0
+      MONGO_COMMAND: 'mongosh'
     volumes:
       - monorepodata:/data/db
+    ports:
+      - '7777:27019'
+    restart: unless-stopped
+
+
     
 volumes:
   monorepodata:

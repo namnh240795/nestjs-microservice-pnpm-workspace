@@ -1,12 +1,12 @@
 import { PasswordHashingService } from '@namnh240795/password-hashing';
-import { PrismaService } from '@namnh240795/prisma';
+import { PgsqlPrismaService } from 'libs/pgsql-prisma/src';
 import { Injectable } from '@nestjs/common';
 import { RegisterDto } from './dtos/register.dto';
 
 @Injectable()
 export class RegistrationService {
   constructor(
-    private readonly prismaService: PrismaService,
+    private readonly prismaService: PgsqlPrismaService,
     private readonly passwordHashingService: PasswordHashingService,
   ) {}
 

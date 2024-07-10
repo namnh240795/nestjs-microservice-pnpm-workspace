@@ -18,7 +18,12 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/monorepo/test/jest-e2e.json",
-    "css:watch": "tailwindcss -i ./apps/frontend/src/styles/tailwind.css -o ./apps/frontend/src/styles/style.css --watch"
+    "css:watch": "tailwindcss -i ./apps/frontend/src/styles/tailwind.css -o ./apps/frontend/src/styles/style.css --watch",
+    "mongo:generate": "npx prisma generate --schema=./database/nosql/mongo/prisma/schema/schema.prisma",
+    "mongo:db:push": "npx prisma db push --schema=./database/nosql/mongo/prisma/schema/schema.prisma",
+    "pgsql:generate": "npx prisma generate --schema=./database/sql/pgsql/prisma/schema/schema.prisma",
+    "pgsql:migrate:dev": "npx prisma migrate dev --schema=./database/sql/pgsql/prisma/schema/schema.prisma",
+    "pgsql:migrate:deploy": "npx prisma migrate deploy --schema=./database/sql/pgsql/prisma/schema/schema.prisma"
   },
   "dependencies": {
     "@nestjs/axios": "^3.0.2",
@@ -101,7 +106,8 @@
       "^@namnh240795/healthcheck(|/.*)$": "<rootDir>/libs/healthcheck/src/$1",
       "^@namnh240795/events(|/.*)$": "<rootDir>/libs/events/src/$1",
       "^@namnh240795/google-auth(|/.*)$": "<rootDir>/libs/google-auth/src/$1",
-      "^@namnh240795/environment(|/.*)$": "<rootDir>/libs/environment/src/$1"
+      "^@namnh240795/environment(|/.*)$": "<rootDir>/libs/environment/src/$1",
+      "^@namnh240795/mongo-prisma(|/.*)$": "<rootDir>/libs/mongo-prisma/src/$1"
     }
   }
 }
