@@ -15,7 +15,13 @@ export class SignInService {
     console.log(data);
   }
 
-  async mongo() {
-    return await this.mongoPrismaService.translation.create({ data: {} });
+  mongo() {
+    return this.mongoPrismaService.locale.create({
+      data: {
+        name: 'Vietnamese (Vietnam)',
+        abbreviation: 'vi-VN',
+        dominant: 'vi-VN',
+      },
+    });
   }
 }

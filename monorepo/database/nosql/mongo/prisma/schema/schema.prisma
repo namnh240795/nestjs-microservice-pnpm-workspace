@@ -7,7 +7,7 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["prismaSchemaFolder"]
-  output = "../../../../../node_modules/@prisma/mongo-client"
+  output          = "../../../../../node_modules/@prisma/mongo-client"
 }
 
 datasource db {
@@ -16,9 +16,20 @@ datasource db {
 }
 
 model Locale {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  name         String @unique
+  abbreviation String
+  dominant     String
 }
 
-model Translation {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+model TranslationLocale {
+  id               String         @id @default(auto()) @map("_id") @db.ObjectId
+  translationKey   TranslationKey @relation(fields: [translationKeyId], references: [id])
+  translationKeyId String         @db.ObjectId
+}
+
+model TranslationKey {
+  id                String              @id @default(auto()) @map("_id") @db.ObjectId
+  key               String @unique
+  TranslationLocale TranslationLocale[]
 }
