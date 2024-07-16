@@ -77,7 +77,5 @@ Nest is [MIT licensed](LICENSE).
 
 ```bash
 cd monorepo
-docker build -t base:latest --file dockers/base.dockerfile .
-docker build -t sms:latest --file dockers/sms.dockerfile .
-docker build -t backend:latest --file dockers/backend.dockerfile .
+docker build -t service_name --build-arg APP=service_name .
 ```

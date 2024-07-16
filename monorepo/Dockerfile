@@ -20,8 +20,10 @@ RUN npx prisma generate \
 # ---- Release ----
 FROM node:lts-alpine3.20 AS release
 WORKDIR /app
+ARG APP
+ENV APP_URL=${APP}
 COPY --from=build /app/dist/apps/${APP} ./dist/apps/${APP}
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./package.json
 USER node
-CMD ["node", "dist/apps/${APP}/main"]
+CMD node dist/apps/${APP_URL}/main
