@@ -6,6 +6,7 @@ import { SmsModule } from './sms/sms.module';
 import { SignInModule } from './sign-in/sign-in.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongoPrismaModule } from '@namnh240795/mongo-prisma';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { MongoPrismaModule } from '@namnh240795/mongo-prisma';
     RegistrationModule,
     SmsModule,
     SignInModule,
+    CatsModule,
   ],
   controllers: [],
   providers: [],
